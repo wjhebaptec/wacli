@@ -54,4 +54,8 @@
 - CLI UX: human-readable output by default with `--json`, global `--store`/`--timeout`, plus `wacli version`.
 - Storage: default `~/.wacli`, lock file for single-instance safety, SQLite DB with FTS5, WhatsApp session store, and media directory.
 
-<!-- Personal note: I'm using this fork primarily on Linux (Ubuntu 24.04). Default store path ~/.wacli works great; no changes needed there. Main interest is the messages search and send-file features. -->
+<!-- Personal notes:
+  - Running on Linux (Ubuntu 24.04). Default store path ~/.wacli works great; no changes needed there.
+  - Main interest: messages search and send-file features.
+  - TODO: look into whether `wacli messages search` can accept a --limit flag; 50 results is sometimes not enough for my use case.
+-->
