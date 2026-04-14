@@ -60,6 +60,6 @@
   - TODO: look into whether `wacli messages search` can accept a --limit flag; 50 results is sometimes not enough for my use case.
   - TODO: check if there's a way to filter `wacli messages list` by date range, e.g. --since and --until flags.
   - NOTE: tested `wacli doctor` after fresh auth — FTS status shows "ok" immediately, no manual rebuild needed.
-  - NOTE: `wacli messages search` default limit appears to be hardcoded at 50; filed a mental note to patch this locally to 200.
-  - TODO: explore piping `wacli messages search --json` output into jq for custom filtering as a workaround until --limit lands.
+  - NOTE: confirmed `wacli send file` works well with --filename override; useful for sending scripts with clean display names.
+  - TODO: explore piping `wacli messages search` output into jq for custom filtering once --limit lands.
 -->
