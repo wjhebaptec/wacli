@@ -58,4 +58,6 @@
   - Running on Linux (Ubuntu 24.04). Default store path ~/.wacli works great; no changes needed there.
   - Main interest: messages search and send-file features.
   - TODO: look into whether `wacli messages search` can accept a --limit flag; 50 results is sometimes not enough for my use case.
+  - TODO: check if there's a way to filter `wacli messages list` by date range, e.g. --since and --until flags.
+  - NOTE: tested `wacli doctor` after fresh auth — FTS status shows "ok" immediately, no manual rebuild needed.
 -->
