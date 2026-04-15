@@ -22,6 +22,7 @@ func main() {
 	cmd.SetVersionInfo(Version, Commit, Date)
 
 	if err := cmd.Execute(); err != nil {
+		// Use exit code 2 for usage errors, 1 for general errors
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
 	}
