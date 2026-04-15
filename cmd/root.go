@@ -27,7 +27,8 @@ using the WhatsApp Web multi-device API.
 
 Authenticate once using a QR code, then send messages, files,
 and media directly from your terminal or scripts.`,
-	SilenceUsage: true,
+	SilenceUsage:  true,
+	SilenceErrors: true, // handle errors ourselves for cleaner output
 }
 
 // versionCmd prints the current version information.
@@ -46,7 +47,7 @@ func Execute(version, commit, date string) {
 	Date = date
 
 	if err := rootCmd.Execute(); err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		fmt.Fprintf(os.Stderr, "error: %v\n", err)
 		os.Exit(1)
 	}
 }
