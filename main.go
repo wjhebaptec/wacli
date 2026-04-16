@@ -24,6 +24,7 @@ func main() {
 	if err := cmd.Execute(); err != nil {
 		// Use exit code 2 for usage errors, 1 for general errors
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+		// TODO: differentiate exit codes based on error type once cmd exposes them
 		os.Exit(1)
 	}
 }
