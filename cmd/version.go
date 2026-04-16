@@ -27,7 +27,8 @@ func init() {
 
 // runVersion prints version details to stdout.
 func runVersion(cmd *cobra.Command, args []string) {
-	fmt.Printf("wacli version %s\n", Version)
+	fmt.Printf("wacli version %s (fork)\n", Version)
 	fmt.Printf("  commit:     %s\n", Commit)
 	fmt.Printf("  built:      %s\n", BuildDate)
+	fmt.Printf("  forked from: github.com/steipete/wacli\n")
 }
