@@ -56,9 +56,12 @@ func runSend(cmd *cobra.Command, args []string) error {
 }
 
 // normalizePhoneNumber strips common formatting characters from a phone number.
+// Also handles parentheses, e.g. (49) 123 456-7890 -> 491234567890
 func normalizePhoneNumber(phone string) string {
 	phone = strings.ReplaceAll(phone, " ", "")
 	phone = strings.ReplaceAll(phone, "-", "")
+	phone = strings.ReplaceAll(phone, "(", "")
+	phone = strings.ReplaceAll(phone, ")", "")
 	phone = strings.TrimPrefix(phone, "+")
 	return phone
 }
@@ -101,11 +104,4 @@ func sendMedia(to, filePath, caption string) error {
 		return fmt.Errorf("media file not found: %s", filePath)
 	}
 
-	client := newWhatsAppClient(apiToken, phoneNumberID)
-	if err := client.SendMedia(to, filePath, caption); err != nil {
-		return fmt.Errorf("failed to send media: %w", err)
-	}
-
-	fmt.Printf("✓ Media sent to %s\n", to)
-	return nil
-}
+	client := newWhatsAppClient(api
