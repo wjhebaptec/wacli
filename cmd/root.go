@@ -26,7 +26,9 @@ var rootCmd = &cobra.Command{
 using the WhatsApp Web multi-device API.
 
 Authenticate once using a QR code, then send messages, files,
-and media directly from your terminal or scripts.`,
+and media directly from your terminal or scripts.
+
+Config directory defaults to $HOME/.config/wacli (override with --config or WACLI_CONFIG env var).`,
 	SilenceUsage:  true,
 	SilenceErrors: true, // handle errors ourselves for cleaner output
 }
@@ -58,7 +60,7 @@ func init() {
 	// Persistent flags available to all subcommands.
 	rootCmd.PersistentFlags().StringP(
 		"config", "c", "",
-		"path to config directory (default: $HOME/.config/wacli)",
+		"path to config directory (default: $HOME/.config/wacli, or $WACLI_CONFIG)",
 	)
 	rootCmd.PersistentFlags().BoolP(
 		"verbose", "v", false,
