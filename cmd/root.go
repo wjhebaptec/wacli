@@ -64,4 +64,9 @@ func init() {
 		"verbose", "v", false,
 		"enable verbose/debug logging",
 	)
+	// Default to showing help when no subcommand is provided, rather than
+	// silently doing nothing — makes the tool more discoverable for first-time use.
+	rootCmd.RunE = func(cmd *cobra.Command, args []string) error {
+		return cmd.Help()
+	}
 }
