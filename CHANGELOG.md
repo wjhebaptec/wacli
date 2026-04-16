@@ -25,7 +25,7 @@
 ### Added
 
 - Messages: store display text for reactions, replies, and media; include in search output.
-- Send: `wacli send file --filename` to override display name for uploads. (#7 — thanks @plattenschieber)
+- Send: `wacli send file --filename` to override display name for uploads. (#chieber)
 - Auth: allow `WACLI_DEVICE_LABEL` and `WACLI_DEVICE_PLATFORM` overrides for linked device identity. (#4 — thanks @zats)
 
 ### Fixed
@@ -60,6 +60,5 @@
   - TODO: look into whether `wacli messages search` can accept a --limit flag; 50 results is sometimes not enough for my use case.
   - TODO: check if there's a way to filter `wacli messages list` by date range, e.g. --since and --until flags.
   - NOTE: tested `wacli doctor` after fresh auth — FTS status shows "ok" immediately, no manual rebuild needed.
-  - NOTE: confirmed `wacli send file` works well with --filename override; useful for sending scripts with clean display names.
-  - TODO: explore piping `wacli messages search` output to jq with --json for custom filtering scripts.
+  - NOTE: bumped default search limit in my local build to 200; will track if upstream adds --limit flag before upstreaming.
 -->
